@@ -1,0 +1,9 @@
+version: "3.5"
+services:
+  terraform:
+    image: hashicorp/terraform:1.2.6
+    volumes:
+      - ./provisioning:/usr/src/infra
+    working_dir: /usr/src/infra
+    environment:
+      DIGITALOCEAN_ACCESS_TOKEN: ${DIGITALOCEAN_ACCESS_TOKEN}
